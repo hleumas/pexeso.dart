@@ -1,0 +1,32 @@
+#board {
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 5px solid grey;
+}
+
+.pexeso-card {
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.pexeso-card img {
+  width: 100px;
+  height: 100px;
+}
+
+.pexeso-card .back {
+  display: block;
+}
+
+.pexeso-card .front {
+  display: none;
+}
+
+.pexeso-card.turned .back {
+  display: none;
+}
+
+.pexeso-card.turned .front {
+  display: block;
+}

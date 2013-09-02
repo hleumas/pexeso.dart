@@ -1,0 +1,12 @@
+name: pexeso
+version: 1.0.0
+author: Samuel Hapák
+description: Memory game.
+dependencies:
+  browser: any
+dev_dependencies:
+  unittest: any
+
+#dependencies:
+#  js: any
+#  unittest: any
