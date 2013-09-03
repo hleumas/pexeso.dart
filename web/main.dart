@@ -9,6 +9,7 @@ import 'package:pexeso/pexeso_model.dart';
 
 final List turnedCards = [];
 Game game;
+HtmlElement scoreBoard;
 
 void main() {
   prepareGame();
@@ -17,6 +18,7 @@ void main() {
 
 void prepareGame() {
   game = new Game.withCards(2, 32);
+  scoreBoard = query('#score');
   var container = query('#board');
   for (var i = 0; i < game.cards.length; i++) {
     new Card.withDom(container, "cards/back.jpg",
@@ -48,7 +50,7 @@ void onTurn(Card card) {
 }
 
 void updateScore() {
-  query('#score').text = "Player1: ${game.score[0]} Player2: ${game.score[1]}";
+  scoreBoard.text = "Player1: ${game.score[0]} Player2: ${game.score[1]}";
 }
 
 /**
