@@ -3,7 +3,7 @@
  */
 library pexeso_model;
 
-import 'package:pexeso/shuffle.dart';
+import 'package:shuffle/shuffle.dart';
 
 /**
  * Returns randomly shuffled [List] of numbers 0..[numOfPairs]-1 containing each
