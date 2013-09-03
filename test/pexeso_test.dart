@@ -1,12 +1,11 @@
 /**
  * Unittests for pexeso game.
  */
-library pexeso_test.dart;
 
 import 'package:unittest/unittest.dart';
 import 'package:unittest/mock.dart';
 import 'package:unittest/interactive_html_config.dart';
-import '../web/pexeso.dart';
+import '../web/main.dart';
 import 'package:pexeso/pexeso_model.dart';
 import 'dart:html';
 
@@ -89,6 +88,7 @@ void main() {
     var card1, card2, card3;
     setUp(() {
       game = new GameMock();
+      scoreBoard = new DivElement();
       card1 = new CardMock(true, 1);
       card2 = new CardMock(true, 2);
       card3 = new CardMock(true, 3);
@@ -144,4 +144,6 @@ class CardMock extends Mock implements Card {
 
   CardMock(this.turned, this.id) : super();
 }
-class GameMock extends Mock implements Game {}
+class GameMock extends Mock implements Game {
+  List score = [0, 0];
+}
