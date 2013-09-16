@@ -13,7 +13,6 @@ HtmlElement scoreBoard;
 
 void main() {
   prepareGame();
-
 }
 
 void prepareGame() {
@@ -89,7 +88,7 @@ class Card {
    * Creates the card with DOM given the [backImage] and [frontImage] and
    * appends it to [container].
    */
-  factory Card.withDom(Node container, String backImage, String frontImage, id) {
+  factory Card.withDom(Element container, String backImage, String frontImage, id) {
     var back = new ImageElement(src: backImage)
                 ..className = 'back';
     var front = new ImageElement(src: frontImage)
@@ -97,9 +96,9 @@ class Card {
 
     var div = new DivElement()
                 ..className = 'pexeso-card'
-                ..append(back)
-                ..append(front);
-    container.append(div);
+                ..children.addAll([back, front]);
+
+    container.children.add(div);
 
     return new Card(div, false, id);
   }
